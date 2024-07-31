@@ -1,0 +1,11 @@
+import random
+def generate_captcha(length=5):
+    captcha = ''
+    for _ in range(length):
+        captcha += random.choice([
+            chr(random.randint(65, 90)),
+            chr(random.randint(97, 122)),  
+            str(random.randint(0, 9))     
+        ])
+    return captcha
+print(generate_captcha())
