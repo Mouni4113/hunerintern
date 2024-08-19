@@ -1,0 +1,16 @@
+def find_runner_up(scores):
+    scores = list(set(scores)) 
+    scores.sort(reverse=True)  
+    if len(scores) < 2:
+        return None 
+    return scores[1] 
+
+scores = input("Enter the scores, separated by spaces: ")
+scores = list(map(int, scores.split()))
+
+runner_up = find_runner_up(scores)
+
+if runner_up is not None:
+    print("The runner-up score is:", runner_up)
+else:
+    print("Not enough scores to determine a runner-up.")
